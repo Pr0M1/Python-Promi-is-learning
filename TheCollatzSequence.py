@@ -1,3 +1,5 @@
+# The collatz senquence
+# Any number you type in, will always end in 1.
 def collatz(number):
     if number % 2 == 0: #even
         number = number // 2
