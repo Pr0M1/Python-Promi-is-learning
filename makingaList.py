@@ -5,10 +5,10 @@ while True:
     things = input()
     if things == "":
         break
-    elif things in myList: # If its already on the list, the input 
-        
+    elif things in myList: # If its already on the list, it will skip it.
         print("It's already on the the list.")
-    myList = myList + [things]
+    else:
+        myList = myList + [things]
 print("Your list: ")
 for things in myList:
     print(things)
