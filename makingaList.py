@@ -1,14 +1,32 @@
 myList = []
+
 while True:
     print("Let's make a list: Item " + str(len(myList) +1) +
-     " (Or enter nothing to stop.)")
+     " (To check your list type: 'list'. If you wish to stop, type: 'end')")
     things = input()
-    if things == "":
+
+    if things == "end": # Ends the list
         break
-    elif things in myList: # If its already on the list, it will skip it.
-        print("It's already on the the list.")
-    else:
-        myList = myList + [things]
+
+    elif things == "list": # Checking your items on the list
+        print(myList)
+
+    elif things not in myList: # Adds to the list.
+        myList.append(things)
+
+    elif things in myList: # Removes it from the list if you want to.
+        print("Its already on the list: Dont you with to remove it?")
+
+        while True:
+            answer = input()
+
+            if answer == "yes":
+                myList.remove(things)
+                break
+
+            elif answer == "no":
+                break
+
 print("Your list: ")
 for things in myList:
     print(things)
