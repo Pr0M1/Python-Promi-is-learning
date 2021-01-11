@@ -15,7 +15,7 @@ while True:
         myList.append(things)
 
     elif things in myList: # Removes it from the list if you want to.
-        print("Its already on the list: Dont you with to remove it?")
+        print("Its already on the list. Do you wish to remove it? 'yes' or 'no'")
 
         while True:
             answer = input()
