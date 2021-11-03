@@ -88,6 +88,7 @@ print("Accessing terminal.")
 username()
 password()
 while True:
+    print("Hello")
     print("Entering mainframe.")
     print("To exit type: 'goodbye'")
     print("If you wish to play a game type: 'rollgame'")
