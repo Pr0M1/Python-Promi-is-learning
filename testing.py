@@ -1,13 +1,10 @@
-import os
+def textList():
 
-def textwrithing():
+    openfile = open("C:\\Users\\User\\Desktop\\readme.txt", "a+")
+    openfile.write(input())
 
-    userr = input("")
-    
-    if userr == "d":
-        openfile = open("C:\\Users\\User\\Desktop\\readme.txt", "a+")
-        openfile.write(input(""))
+    openfile = open("C:\\Users\\User\\Desktop\\readme.txt", "r")
+    content = openfile.read()
+    print(content)
 
-        openfile = open("C:\\Users\\User\\Desktop\\readme.txt", "r")
-        content = openfile.read()
-        print(content)
+textList()
