@@ -1,4 +1,4 @@
-import os
+import os, shutil
 
 def txtCheck():
     os.chdir("C:\\Users\\User\\Desktop")
