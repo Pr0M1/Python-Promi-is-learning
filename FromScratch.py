@@ -15,3 +15,8 @@ def letsCount():
     for n in count:
         print(n)
 
+f = input()
+if f == "r":
+    print("Hello")
+else:
+    print("Hhowdy")
