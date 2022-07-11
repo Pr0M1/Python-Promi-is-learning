@@ -1,12 +1,15 @@
 import os, shutil
 
 def txtCheck():
-    os.chdir("C:\\Users\\User\\Desktop")
+    os.chdir("C:\\Users\\xl4t3\\Desktop")
 
     for filename in os.listdir():
         if filename.endswith(".txt"):
-        #os.unlink(filename) # Dry run
-            print(filename)
+            openfile = open(filename)
+            content = openfile.read()
+            print(content)
+            openfile.close()
+
 
 def lookFor():
 
@@ -26,4 +29,3 @@ def lookFor():
                 shutil.copy(os.join(folderName, file), os.join(folderName, file + ".backup"))
 
 txtCheck()
-lookFor()
