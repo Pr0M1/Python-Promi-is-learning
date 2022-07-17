@@ -1,5 +1,3 @@
-import random
-
 def whatif():
 
     press = input()
@@ -9,14 +7,49 @@ def whatif():
     elif press != "1":
         print("error")
 
-def letsCount():
+def calculate(num1, num2):
 
-    count = range(2,5)
-    for n in count:
-        print(n)
+    product = num1 * num2
 
-f = input()
-if f == "r":
-    print("Hello")
-else:
-    print("Hhowdy")
+    if product <= 1000:
+        return product
+    else:
+        return num1 + num2
+
+def looping():
+
+    while True:
+
+        f = input()
+
+        if f == "1":
+            print("Hi")
+
+        elif f == "2":
+            print("Howdy")
+
+        else:
+            return
+
+def countDown():
+    previous_num = 0
+
+    for i in range(1,10):
+        x_sum = previous_num + i
+        print("Current number", i, "Previous Number", previous_num, "Sum:", i + previous_num)
+        previous_num = i
+
+def callString():
+
+    word = input("Enter word:")
+    print("Original String:", word)
+
+    size = len(word)
+
+    print("Printing only even index chars")
+    for i in range(0, size - 1, 2):
+        print("index[", i, "]", word[i])
+
+
+callString()
+
