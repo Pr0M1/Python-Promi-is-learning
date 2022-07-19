@@ -1,3 +1,5 @@
+import datetime
+
 def whatif():
 
     press = input()
@@ -50,6 +52,23 @@ def callString():
     for i in range(0, size - 1, 2):
         print("index[", i, "]", word[i])
 
+def removeString(word, n):
 
-callString()
+    print("Original string:", word)
+    x = word[n:]
+    return x
 
+def checkIfvalid():
+    
+    numbers_x = [10, 20, 30, 40, 10]
+    numbers_y = [75, 65, 35, 75, 30]
+
+    if numbers_x[0] == numbers_x[4]:
+        print(True)
+    else:
+        print(False)
+
+
+checkIfvalid()
+    
+    
