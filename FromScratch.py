@@ -1,4 +1,4 @@
-import datetime
+
 
 def whatif():
 
@@ -22,12 +22,12 @@ def looping():
 
     while True:
 
-        f = input()
+        f = int(input())
 
-        if f == "1":
+        if f == 1:
             print("Hi")
 
-        elif f == "2":
+        elif f == 2:
             print("Howdy")
 
         else:
@@ -58,17 +58,23 @@ def removeString(word, n):
     x = word[n:]
     return x
 
-def checkIfvalid():
-    
-    numbers_x = [10, 20, 30, 40, 10]
-    numbers_y = [75, 65, 35, 75, 30]
+def checkIfvalid(numberList):
+    print("Given list:", numberList)
 
-    if numbers_x[0] == numbers_x[4]:
-        print(True)
+    first_number = numberList[0]
+    last_number = numberList[-1]
+    
+    if first_number == last_number:
+        return True
     else:
-        print(False)
+        False
 
+def simple_calculator():
+    
 
-checkIfvalid()
-    
-    
+    first_number = float(input("First: "))
+    second_number = float(input("Second: "))
+    sum = first_number + second_number
+    print("Sum: ", sum)
+
+simple_calculator()
