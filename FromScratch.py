@@ -21,17 +21,16 @@ def calculate(num1, num2):
 def looping():
 
     while True:
+        
+        something = input("Type something: ")
 
-        f = int(input())
+        if something == int():
+            print("Its a intiger")
+        elif something == str():
+            print("Its a string.")
+        elif something == float():
+            print("Its a ")
 
-        if f == 1:
-            print("Hi")
-
-        elif f == 2:
-            print("Howdy")
-
-        else:
-            return
 
 def countDown():
     previous_num = 0
