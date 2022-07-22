@@ -29,8 +29,7 @@ def looping():
         elif something == str():
             print("Its a string.")
         elif something == float():
-            print("Its a ")
-
+            print("Its a float.")
 
 def countDown():
     previous_num = 0
@@ -76,4 +75,18 @@ def simple_calculator():
     sum = first_number + second_number
     print("Sum: ", sum)
 
-simple_calculator()
+def weight_calcuulator():
+
+    while True:
+
+        weight = float(input("Weight: "))
+        kg_or_lbs = input("(K)g or (L)bs: ")
+
+        if kg_or_lbs.upper() == "K":
+            cal_kg_to_lbs = weight / 0.45
+            print("Weight in Lbs: ", cal_kg_to_lbs)
+        elif kg_or_lbs.upper() == "L":
+            cal_lbs_to_kg = weight * 0.45
+            print("Weight in Kg: ", cal_lbs_to_kg)
+
+weight_calcuulator()
