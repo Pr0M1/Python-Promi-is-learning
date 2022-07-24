@@ -1,5 +1,4 @@
 
-
 def whatif():
 
     press = input()
@@ -89,4 +88,16 @@ def weight_calcuulator():
             cal_lbs_to_kg = weight * 0.45
             print("Weight in Kg: ", cal_lbs_to_kg)
 
-weight_calcuulator()
+class Person():
+    
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def myfunc(self):
+        print("Hello my name is ", self.name)
+        print("Im ", self.age, " years old.")
+
+p1 = Person("John", 36)
+p1.age = 40
+p1.myfunc()
