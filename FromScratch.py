@@ -23,10 +23,10 @@ def looping():
         
         something = input("Type something: ")
 
-        if something == int():
-            print("Its a intiger")
-        elif something == str():
-            print("Its a string.")
+        if something == "asd":
+            print("Its a string")
+        elif something == int:
+            print("Its a intiger.")
         elif something == float():
             print("Its a float.")
 
@@ -98,6 +98,26 @@ class Person():
         print("Hello my name is ", self.name)
         print("Im ", self.age, " years old.")
 
-p1 = Person("John", 36)
-p1.age = 40
-p1.myfunc()
+def new_func(Person):
+    p1 = Person("John", 36)
+    p1.age = 40
+    p1.myfunc()
+
+def credit_house():
+
+    while True:
+
+        house_price = 1000000
+        credit = input("What is your credit score? ")
+
+        if int(credit) >= 80:
+            money_tenpercent = (house_price / 100) * 10
+            print("You have to pay ", money_tenpercent, "for 1 mill loan.")
+
+        elif int(credit) < 80:
+            money_twelve_percent = (house_price / 100) * 20
+            print("You have to pay ", money_twelve_percent, "for 1 mill loan.")
+        else:
+            print("Give me a number:")
+
+looping()
