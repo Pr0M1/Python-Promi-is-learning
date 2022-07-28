@@ -83,10 +83,10 @@ def weight_calcuulator():
 
         if kg_or_lbs.upper() == "K":
             cal_kg_to_lbs = weight / 0.45
-            print("Weight in Lbs: ", cal_kg_to_lbs)
+            print("Your weight in Lbs is: ", cal_kg_to_lbs)
         elif kg_or_lbs.upper() == "L":
             cal_lbs_to_kg = weight * 0.45
-            print("Weight in Kg: ", cal_lbs_to_kg)
+            print("Your weight in Kg is: ", cal_lbs_to_kg)
 
 class Person():
     
@@ -120,4 +120,53 @@ def credit_house():
         else:
             print("Give me a number:")
 
-looping()
+def account_name():
+
+    while True:
+
+        name_given = input()
+
+        if len(name_given) < 3:
+            print("Name must be more then 3 characters:")
+        elif len(name_given) >= 50:
+            print("Name cant be more then 50 characters")
+        elif name_given == "break":
+            break
+        else:
+            print("Name looks good!")
+
+def car_simulator():
+
+    started = False
+    order = ""
+
+    while True:
+
+        order = input("> ").lower()
+
+        if order == "start":
+            if started == True:
+                print("Car already started.")
+            else:
+                started = True
+                print("The car started.")
+
+        elif order == "stop":
+            if not started == True:
+                print("Car already stopped.")
+            else:
+                started = False
+                print("The car stopped.")
+
+        elif order == "help":
+            print("""
+    start - it will start the car.
+    stop  - it will stop the car.
+    quit  - it quits the program.
+            """)
+        elif order == "quit":
+            break
+        else:
+            print("I dont understand.")
+
+car_simulator()
