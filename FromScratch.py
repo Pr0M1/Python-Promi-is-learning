@@ -1,21 +1,4 @@
-
-def whatif():
-
-    press = input()
-
-    if press == "1":
-        print("1")
-    elif press != "1":
-        print("error")
-
-def calculate(num1, num2):
-
-    product = num1 * num2
-
-    if product <= 1000:
-        return product
-    else:
-        return num1 + num2
+import random
 
 def looping():
 
@@ -169,4 +152,171 @@ def car_simulator():
         else:
             print("I dont understand.")
 
-car_simulator()
+def nextloop_test():
+
+    numbers = [1, 1, 1, 1, 7]
+
+    for x_count in numbers:
+        output = ""
+        for count in range(x_count):
+            output += "x"
+        print(output)
+
+def find_greatest_number():
+
+    numbers = [1, 2, 3, 8, 4, 5]
+    max = numbers[0]
+    for number in numbers:
+        if number > max:
+            max = number
+    print(max)
+
+def traffic_lights_selfm():
+    
+    red_light = ()
+    yellow_light = ()
+    green_light = ()
+    
+    while True:
+             
+        if red_light == False:
+            print("Its red.")
+            red_light = True
+            green_light = False
+
+        elif red_light:
+            print("Its turning from red.")
+            yellow_light = True
+
+            while True:
+                
+                if green_light:
+                    print("Its green!")
+                    red_light = False
+                    break
+                    
+                elif yellow_light:
+                    print("Its red and yellow.")
+                    green_light = True
+  
+        else:
+            red_light = False
+
+def list_testing_selfm():
+
+    my_list = []
+
+    while True:
+
+        item = input("Put something in the list: ")
+        
+        if item not in my_list:
+            my_list.append(item)
+            print(my_list)
+
+        elif item in my_list:
+            my_list.append(item)
+            print("""
+
+Its already on the list. 
+Do you want to remove it?
+(Y) Yes (N) No
+
+            """, my_list)
+
+            while True:
+
+                answer = input()
+
+                if answer.lower() == "y":
+                    my_list.remove(item)
+                    print(my_list)
+                    break
+
+                elif answer.lower() == "n":
+                    break
+
+                else:
+                    print("Give my an answer.")
+            
+def dictionarie():
+
+    phone = input("Phone: ")
+
+    digits_mapping = {
+        "1": "One",
+        "2": "Two",
+        "3": "Three",
+        "4": "Four"
+    }
+    output = ""
+    for ch in phone:
+        output += digits_mapping.get(ch, "!") + " "
+    print(output)
+
+def dictionarie_practice(message):
+
+    words = message.split(" ")
+    emojis = {
+        ":)": "Fucking",
+        ":(": "Fuck..."
+    }
+    output = ""
+    for word in words:
+        output += emojis.get(word, word) + " "
+    return output
+
+    words = input()
+    print(dictionarie_practice(words))
+
+def how_to_handle_errors():
+
+    try:
+        age = int(input("Age: "))
+        income = 2000
+        risk = income / age
+        print(age)
+    except ZeroDivisionError:
+        print("Age cannot be 0.")
+    except ValueError:
+        print("Invalid value")
+
+class Point:
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def move(self):
+        print("move")
+
+    def draw(self):
+        print("draw")
+
+    #point1 = Point(10, 20)
+    #print(point1.x)
+
+class Mammal:
+
+    def walk(self):
+        print("walk")
+
+class Dog(Mammal):
+    def bark(self):
+        print("bark")
+
+class Cat(Mammal):
+    def be_annoying(self):
+        print("Lovely")
+
+class Dice:
+
+    def roll(self):
+        first = random.randint(1, 6)
+        second = random.randint(1, 6)
+        return first, second
+
+    #dice = Dice()
+    #print(dice.roll()
+
+

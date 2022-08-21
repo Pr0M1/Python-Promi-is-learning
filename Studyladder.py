@@ -1,31 +1,46 @@
 import random
 
-def username(): # Username checker
-    while True:
-        print("Welcome, what is your name?")
-        userr = input()
-        if userr == "d":
-            print("Welcome " + userr + ".")
-            break
-        elif userr != "d":
-            print("Access denied, wrong user name!")
-            print("Try again.")
+class Validator():
 
-def password(): # Password checker
-    while True:
-        print("Please, type in your password.")
-        password = input()
-        if password == "d":
-            print("Access granted!")
-            break
-        elif password != "d":
-            print("Access Denied")
-            print("Try again.")
+    def username(): # Username checker
 
-def rollGame(): # Games mini-program
-    print("Roll the dice!")
-    print("To roll, type: 'roll'.")
-    print("If you wish to quit, please type: 'quit'")
+        while True:
+
+            print("Welcome, what is your name?")
+            userr = input()
+
+            if userr == "d":
+                print("Welcome " + userr + ".")
+                break
+
+            elif userr != "d":
+                print("Access denied, wrong user name!")
+                print("Try again.")
+
+    def password(): # Password checker
+
+        while True:
+
+            print("Please, type in your password.")
+            password = input()
+
+            if password == "d":
+                print("Access granted!")
+                break
+
+            elif password != "d":
+                print("Access Denied")
+                print("Try again.")
+
+def rollGame(): # Dice roll game
+    print("""
+    
+Roll the dice!
+"To roll, type: 'roll'."
+"If you wish to quit, please type: 'quit'"
+
+    """)
+
 
     wins = 0
     losses = 0
@@ -85,16 +100,32 @@ def rollGame(): # Games mini-program
             losses = losses + 1
 
 print("Accessing terminal.")
-username()
-password()
+Validator.username()
+Validator.password()
 while True:
-    print("Hello")
-    print("Entering mainframe.")
-    print("To exit type: 'goodbye'")
-    print("If you wish to play a game type: 'rollgame'")
+    print(
+
+"""
+
+Entering mainframe.
+To exit type: 'goodbye'
+If you wish to play a game type: 'rollgame'
+
+"""
+
+)
+
     pickCommand = input()
     if pickCommand == "goodbye":
         print("Exiting system. Have a nice day.")
         break
     elif pickCommand == "rollgame":
         rollGame()
+    else:
+        print("""
+        
+Please give me a valid command.
+To exit type: 'goodbye'
+If you wish to play a game type: 'rollgame'
+
+        """)

@@ -1,10 +1,6 @@
-def textList():
+from pathlib import Path
 
-    openfile = open("C:\\Users\\User\\Desktop\\readme.txt", "a+")
-    openfile.write(input())
+path = Path()
+for file in path.glob("*"):
+    print(file)
 
-    openfile = open("C:\\Users\\User\\Desktop\\readme.txt", "r")
-    content = openfile.read()
-    print(content)
-
-textList()
