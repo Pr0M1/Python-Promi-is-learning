@@ -40,6 +40,10 @@ def hangedman(words):
             print("Invalid character. Please try again. ")
 
 
-hangedman(word)
+#hangedman(word)
+
+tries = 0
 
 
+for i in range(10):
+    print(i)
