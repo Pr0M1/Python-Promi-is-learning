@@ -1,4 +1,5 @@
 import random
+from unittest import skip
 from words import word
 import string
 
@@ -42,8 +43,34 @@ def hangedman(words):
 
 #hangedman(word)
 
-tries = 0
 
+opt_numbers = [1, 2, 3]
+tries = int()
 
-for i in range(10):
-    print(i)
+while True:
+
+    reaction = {
+        1: "One",
+        2: "Two",
+        3: "Three",
+        4: "Four",
+        5: "Five"
+    }
+
+    guess = int(input("Guess a number: "))
+
+    if tries in reaction:
+        if reaction == 5:
+            print(reaction[tries])
+            break
+        print(reaction[tries])
+        continue
+
+    elif guess in opt_numbers:
+        print("You guessed it.")
+        break
+    elif guess not in opt_numbers:
+        print("Wrong guess.")
+        tries = tries + 1
+    
+    
