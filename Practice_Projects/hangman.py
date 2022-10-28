@@ -13,7 +13,7 @@ def valid_word(words):
     return word.upper()
 
 
-def hangedman(words):
+def hangman(words):
 
     word = valid_word(words)
     word_letters = set(word)
@@ -46,31 +46,33 @@ def hangedman(words):
 
 opt_numbers = [1, 2, 3]
 tries = int()
-
+reaction = {
+    0: "You have 5 more chances to guess it right.",
+    1: "Frist guess.",
+    2: "Second guess",
+    3: "Third guess.",
+    4: "Fourth guess",
+    5: "This was the last guess."
+}
 while True:
-
-    reaction = {
-        1: "One",
-        2: "Two",
-        3: "Three",
-        4: "Four",
-        5: "Five"
-    }
 
     guess = int(input("Guess a number: "))
 
     if tries in reaction:
-        if reaction == 5:
-            print(reaction[tries])
-            break
-        print(reaction[tries])
-        continue
 
-    elif guess in opt_numbers:
-        print("You guessed it.")
-        break
-    elif guess not in opt_numbers:
-        print("Wrong guess.")
-        tries = tries + 1
+        if tries == 5:
+            print(reaction[tries])
+            print("You guessed to meny times. Game over.")
+            break
+
+        elif guess in opt_numbers:
+            print("You guessed it.")
+            break
+
+        elif guess not in opt_numbers:
+            print("Wrong guess.")
+            print(reaction[tries])
+            tries = tries + 1
+            
     
     
