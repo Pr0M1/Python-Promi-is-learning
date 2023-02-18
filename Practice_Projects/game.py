@@ -1,11 +1,17 @@
+import math
+import time
 from player import Human_player, Random_cpu
 
 class TicTacToe:
 
     def __init__(self):
         
-        self.board = [" " for _ in range(9)]
+        self.board = self.make_board()
         self.current_winner = None
+
+    @staticmethod
+    def make_board():
+        return [" " for _ in range(9)]
 
     def print_board(self):
         for row in [self.board[i*3:(i+1)*3] for i in range(3)]:
@@ -13,7 +19,7 @@ class TicTacToe:
     
     @staticmethod
     def print_board_nums():
-
+        # 0 | 1 | 2 
         number_board = [[str(i) for i in range(j*3, (j+1)*3)] for j in range(3)]
         for row in number_board:
             print("| " + " | ".join(row) + " |")
@@ -38,24 +44,29 @@ class TicTacToe:
 
     def winner(self, square, letter):
 
-        row_ind = square // 3
+        # check the row
+        row_ind = math.floor(square / 3)
         row = self.board[row_ind*3 : (row_ind + 1) * 3]
+         # print("row", row)
         if all([spot == letter for spot in row]):
             return True
 
         col_ind = square % 3
         column = [self.board[col_ind+i*3] for i in range(3)]
+
+             # print("col", col)
         if all([spot == letter for spot in column]):
             return True
 
         if square % 2 == 0:
             diagonal1 = [self.board[1] for i in [0, 4, 8]]
+            # print("diag1", diagonal1)
             if all([spot == letter for spot in diagonal1]):
                 return True
+            # print ("diag2", diagonal2)
             diagonal2 = [self.board[i] for i in [2, 4, 6]]
             if all([spot == letter for spot in diagonal2]):
                 return True
-
         return False
 
 
@@ -69,7 +80,7 @@ def play(game, x_player, o_player, print_game=True):
 
     while game.empty_squares():
         
-        if letter == "0":
+        if letter == "O":
             square = o_player.get_move(game)
         else:
             square = x_player.get_move(game)
@@ -83,10 +94,12 @@ def play(game, x_player, o_player, print_game=True):
             if game.current_winner:
                 if print_game:
                     print(letter + " wins!")
-                return letter
-
+                return letter # ends the loop and  exits the game
             letter = "0" if letter == "X" else "X" #switch players
-        if print_game:
+            
+        time.sleep(.8)
+    
+    if print_game:
             print("It\'s a tie!")
 
 
