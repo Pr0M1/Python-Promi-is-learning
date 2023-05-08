@@ -36,7 +36,7 @@ def find_files():
     for file in path.glob("*.xlsx"):
         print(file)
 
-#find_files()
+find_files()
 
 my_file = Path("nt1.xlsx")
 if my_file.is_file():
